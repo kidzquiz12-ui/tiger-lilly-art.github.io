@@ -1,3 +1,10 @@
+:root {
+    --cream: #f5f0e8;
+    --ink: #202020;
+    --red: #7d1717;
+    --soft-red: #a33a32;
+    --gold: #b89555;
+    --sage: #66705c;
 /* =========================
    GENERAL
 ========================= */
@@ -13,8 +20,8 @@ html {
 }
 
 body {
-    background: #f5f0e8;
-    color: #202020;
+    background: var(--cream);
+    color: var(--ink);
     font-family: Georgia, 'Times New Roman', serif;
     line-height: 1.6;
 }
@@ -32,6 +39,10 @@ a {
 header {
     padding: 25px 6%;
     border-bottom: 1px solid #202020;
+    position: sticky;
+    top: 0;
+    background: var(--cream);
+    z-index: 100;
 }
 
 nav {
@@ -96,8 +107,8 @@ nav {
 
 .button {
     display: inline-block;
-    background: #202020;
-    color: #f5f0e8;
+    background: var(--ink);
+    color: var(--cream);
     padding: 14px 25px;
     font-family: Arial, sans-serif;
     font-size: 0.8rem;
@@ -106,7 +117,7 @@ nav {
 }
 
 .button:hover {
-    background: #7d1717;
+    background: var(--red);
     transform: translateY(-3px);
 }
 
