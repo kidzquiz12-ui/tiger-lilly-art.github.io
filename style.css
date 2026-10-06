@@ -1055,3 +1055,144 @@ nav a::after {
 
     pointer-events: none;
 }
+/* =====================================================
+   DREAMY FLOATING DECORATIONS
+   ===================================================== */
+
+.home {
+    position: relative;
+    overflow: hidden;
+}
+
+
+/* STARS */
+
+.dream-decoration {
+    position: absolute;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.star-one {
+    top: 12%;
+    left: 12%;
+    font-size: 22px;
+    color: #c6e1e6;
+    opacity: 0.7;
+}
+
+.star-two {
+    top: 24%;
+    right: 8%;
+    font-size: 15px;
+    color: #9fc9d4;
+    opacity: 0.7;
+}
+
+.star-three {
+    bottom: 20%;
+    left: 42%;
+    font-size: 25px;
+    color: #b8d9df;
+    opacity: 0.45;
+}
+
+
+/* CLOUDS */
+
+.dream-decoration.cloud-one {
+    top: 8%;
+    right: 28%;
+    font-size: 75px;
+    color: #8fb8c5;
+    opacity: 0.12;
+    transform: rotate(-8deg);
+}
+
+.dream-decoration.cloud-two {
+    bottom: 12%;
+    right: 12%;
+    font-size: 100px;
+    color: #a8ccd5;
+    opacity: 0.08;
+    transform: rotate(6deg);
+}
+
+
+/* LILIES */
+
+.dream-decoration.lily-one {
+    bottom: 15%;
+    left: 7%;
+    font-size: 75px;
+    color: #91bdc8;
+    opacity: 0.25;
+    transform: rotate(-15deg);
+}
+
+.dream-decoration.lily-two {
+    top: 18%;
+    right: 5%;
+    font-size: 45px;
+    color: #c0dce0;
+    opacity: 0.2;
+    transform: rotate(20deg);
+}
+
+
+/* WATER RIPPLES */
+
+.water-ripple {
+    position: absolute;
+    border: 1px solid rgba(180, 220, 230, 0.12);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.ripple-one {
+    width: 500px;
+    height: 500px;
+    left: -250px;
+    bottom: -300px;
+
+    box-shadow:
+        0 0 0 35px rgba(180, 220, 230, 0.025),
+        0 0 0 70px rgba(180, 220, 230, 0.02),
+        0 0 0 105px rgba(180, 220, 230, 0.015);
+}
+
+.ripple-two {
+    width: 350px;
+    height: 350px;
+    right: -150px;
+    top: -170px;
+
+    box-shadow:
+        0 0 0 30px rgba(180, 220, 230, 0.025),
+        0 0 0 60px rgba(180, 220, 230, 0.02);
+}
+
+
+/* GENTLE FLOATING MOVEMENT */
+
+@keyframes floatDream {
+
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+
+}
+
+.star-one,
+.star-two,
+.lily-one {
+    animation: floatDream 5s ease-in-out infinite;
+}
