@@ -1342,3 +1342,35 @@ h2 {
         display: none;
     }
 }
+/* WATER RIPPLE TRAIL */
+
+.cursor-ripple {
+    position: fixed;
+
+    width: 8px;
+    height: 8px;
+
+    border: 1px solid rgba(190, 230, 235, 0.5);
+    border-radius: 50%;
+
+    pointer-events: none;
+    z-index: 9998;
+
+    transform: translate(-50%, -50%);
+
+    animation: ripple 0.7s ease-out forwards;
+}
+
+@keyframes ripple {
+    0% {
+        width: 8px;
+        height: 8px;
+        opacity: 0.7;
+    }
+
+    100% {
+        width: 35px;
+        height: 35px;
+        opacity: 0;
+    }
+}
