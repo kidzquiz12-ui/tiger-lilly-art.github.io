@@ -1288,3 +1288,51 @@ h2 {
         width: 90%;
     }
 }
+/* =====================================================
+   WATER LILY CURSOR
+   ===================================================== */
+
+.water-lily-cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 22px;
+    height: 22px;
+
+    pointer-events: none;
+    z-index: 9999;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #c9e8e9;
+    font-size: 20px;
+
+    transform: translate(-50%, -50%);
+
+    text-shadow:
+        0 0 5px rgba(190, 230, 235, 0.7),
+        0 0 12px rgba(120, 190, 205, 0.35);
+
+    transition: transform 0.15s ease;
+}
+
+/* Only use the custom cursor on computers */
+@media (hover: hover) and (pointer: fine) {
+
+    body,
+    a,
+    button {
+        cursor: none;
+    }
+}
+
+/* Don't show it on phones/tablets */
+@media (hover: none), (pointer: coarse) {
+
+    .water-lily-cursor {
+        display: none;
+    }
+}
