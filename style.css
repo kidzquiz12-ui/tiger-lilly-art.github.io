@@ -156,12 +156,64 @@ nav {
 
 .image-placeholder {
     height: 600px;
-    background: #d8cbb9;
+    position: relative;
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            ellipse at 50% 80%,
+            rgba(255, 255, 255, 0.35),
+            transparent 45%
+        ),
+        linear-gradient(
+            180deg,
+            #d9e5df 0%,
+            #a8c8c1 45%,
+            #719c98 100%
+        );
+
     display: flex;
     align-items: center;
     justify-content: center;
-    font-family: Arial, sans-serif;
+
+    font-family: Georgia, 'Times New Roman', serif;
     letter-spacing: 3px;
+
+    box-shadow:
+        inset 0 0 80px rgba(255, 255, 255, 0.25);
+}
+    .image-placeholder::before {
+    content: '';
+    position: absolute;
+    width: 140%;
+    height: 45%;
+    left: -20%;
+    bottom: -5%;
+
+    background:
+        repeating-radial-gradient(
+            ellipse at center,
+            transparent 0px,
+            transparent 14px,
+            rgba(255, 255, 255, 0.22) 16px,
+            transparent 19px
+        );
+
+    opacity: 0.65;
+    transform: perspective(400px) rotateX(55deg);
+}
+    .image-placeholder::after {
+    content: '☁';
+    position: absolute;
+
+    top: 35px;
+    right: 35px;
+
+    font-size: 5rem;
+    color: rgba(255, 255, 255, 0.55);
+
+    filter: blur(1px);
+    transform: rotate(-8deg);
 }
 
 
