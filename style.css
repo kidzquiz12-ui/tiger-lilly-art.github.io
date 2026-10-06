@@ -1196,3 +1196,109 @@ nav a::after {
 .lily-one {
     animation: floatDream 5s ease-in-out infinite;
 }
+/* =====================================================
+   DREAMY TEMPLE NAVIGATION
+   ===================================================== */
+
+.temple-nav {
+    background:
+        linear-gradient(
+            180deg,
+            rgba(7, 29, 47, 0.96),
+            rgba(12, 45, 65, 0.92)
+        );
+
+    border-right: 1px solid rgba(180, 220, 230, 0.25);
+
+    box-shadow:
+        8px 0 35px rgba(0, 0, 0, 0.25);
+
+    backdrop-filter: blur(12px);
+}
+
+
+/* TIGER LILLY TITLE */
+
+.temple-roof h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 30px;
+    line-height: 0.85;
+    letter-spacing: 5px;
+
+    color: #d8edf0;
+
+    text-shadow:
+        0 0 20px rgba(180, 220, 230, 0.15);
+}
+
+
+/* LITTLE DECORATIVE CLOUD */
+
+.nav-decoration {
+    color: #9fc9d4;
+    opacity: 0.7;
+
+    font-size: 20px;
+
+    margin: 25px 0;
+}
+
+
+/* NAVIGATION LINKS */
+
+nav a {
+    position: relative;
+
+    color: #bdd8de;
+
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: 18px;
+    letter-spacing: 2px;
+
+    padding: 12px 18px;
+
+    transition:
+        color 0.3s ease,
+        transform 0.3s ease,
+        letter-spacing 0.3s ease;
+}
+
+
+/* little stars beside links */
+
+nav a::before {
+    content: "✧";
+
+    position: absolute;
+    left: 0;
+
+    opacity: 0;
+
+    color: #b9dce2;
+
+    transition: 0.3s ease;
+}
+
+nav a:hover::before {
+    opacity: 1;
+    left: 4px;
+}
+
+nav a:hover {
+    color: #eef9fa;
+
+    letter-spacing: 4px;
+
+    transform: translateX(5px);
+
+    background: transparent;
+}
+
+
+/* BOTTOM DECORATION */
+
+.temple-bottom span {
+    background: #78a8b8;
+    opacity: 0.5;
+}
