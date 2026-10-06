@@ -384,9 +384,44 @@ footer {
 
 
 /* =========================
-   MOBILE
+   CONTACT DETAILS
 ========================= */
 
+.contact-section {
+    position: relative;
+    overflow: hidden;
+    padding-top: 150px;
+    padding-bottom: 150px;
+}
+
+.contact-section::before {
+    content: '✦';
+    position: absolute;
+    top: 70px;
+    left: 10%;
+    font-size: 3rem;
+    color: var(--gold);
+}
+
+.contact-section::after {
+    content: '✦';
+    position: absolute;
+    bottom: 60px;
+    right: 12%;
+    font-size: 1.5rem;
+    color: var(--red);
+}
+
+.contact-section h2 {
+    margin-bottom: 35px;
+}
+
+.contact-section p:not(.small-heading) {
+    max-width: 550px;
+    margin: 0 auto 35px;
+    font-size: 1.2rem;
+    line-height: 1.8;
+}
 @media (max-width: 800px) {
 
     .nav-links {
