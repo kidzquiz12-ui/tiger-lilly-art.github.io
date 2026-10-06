@@ -1,0 +1,332 @@
+/* =========================
+   GENERAL
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #f5f0e8;
+    color: #202020;
+    font-family: Georgia, 'Times New Roman', serif;
+    line-height: 1.6;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+
+/* =========================
+   NAVIGATION
+========================= */
+
+header {
+    padding: 25px 6%;
+    border-bottom: 1px solid #202020;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.4rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+    font-family: Arial, sans-serif;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.nav-links a:hover {
+    text-decoration: underline;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    min-height: 85vh;
+    padding: 80px 6%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.small-heading {
+    font-family: Arial, sans-serif;
+    font-size: 0.75rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-size: clamp(3rem, 7vw, 7rem);
+    line-height: 0.95;
+    font-weight: normal;
+    margin-bottom: 30px;
+}
+
+.hero-text > p:not(.small-heading) {
+    max-width: 450px;
+    font-size: 1.1rem;
+    margin-bottom: 35px;
+}
+
+.button {
+    display: inline-block;
+    background: #202020;
+    color: #f5f0e8;
+    padding: 14px 25px;
+    font-family: Arial, sans-serif;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    transition: 0.3s;
+}
+
+.button:hover {
+    background: #7d1717;
+    transform: translateY(-3px);
+}
+
+
+/* =========================
+   IMAGE PLACEHOLDER
+========================= */
+
+.image-placeholder {
+    height: 600px;
+    background: #b7a895;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Arial, sans-serif;
+    letter-spacing: 3px;
+}
+
+
+/* =========================
+   SECTIONS
+========================= */
+
+.section {
+    padding: 120px 6%;
+}
+
+.section h2,
+.custom-section h2 {
+    font-size: clamp(2.5rem, 5vw, 5rem);
+    font-weight: normal;
+    line-height: 1;
+    margin-bottom: 60px;
+}
+
+
+/* =========================
+   SHOP
+========================= */
+
+.products {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.product-image {
+    height: 400px;
+    background: #d8cbb9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Arial, sans-serif;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+}
+
+.product h3 {
+    font-size: 1.6rem;
+    font-weight: normal;
+    margin-bottom: 5px;
+}
+
+.product p {
+    margin-bottom: 15px;
+    color: #555;
+}
+
+.product a {
+    font-family: Arial, sans-serif;
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+}
+
+.product a:hover {
+    color: #7d1717;
+}
+
+
+/* =========================
+   GALLERY
+========================= */
+
+.gallery-section {
+    background: #202020;
+    color: #f5f0e8;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.gallery-item {
+    height: 400px;
+    background: #75695e;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Arial, sans-serif;
+    letter-spacing: 2px;
+}
+
+.gallery-item:nth-child(2),
+.gallery-item:nth-child(5) {
+    height: 500px;
+}
+
+
+/* =========================
+   ABOUT
+========================= */
+
+.about-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+}
+
+.about-section > p {
+    font-size: 1.4rem;
+    max-width: 600px;
+}
+
+
+/* =========================
+   CUSTOM ART
+========================= */
+
+.custom-section {
+    background: #7d1717;
+    color: #f5f0e8;
+    padding: 140px 6%;
+}
+
+.custom-section p:not(.small-heading) {
+    max-width: 600px;
+    font-size: 1.2rem;
+    margin-bottom: 35px;
+}
+
+.custom-section .button {
+    background: #f5f0e8;
+    color: #202020;
+}
+
+.custom-section .button:hover {
+    background: #202020;
+    color: #f5f0e8;
+}
+
+
+/* =========================
+   CONTACT
+========================= */
+
+.contact-section {
+    text-align: center;
+}
+
+.contact-section p:not(.small-heading) {
+    margin-bottom: 30px;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    border-top: 1px solid #202020;
+    padding: 30px 6%;
+    display: flex;
+    justify-content: space-between;
+    font-family: Arial, sans-serif;
+    font-size: 0.75rem;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 800px) {
+
+    .nav-links {
+        display: none;
+    }
+
+    .hero {
+        grid-template-columns: 1fr;
+        padding-top: 50px;
+    }
+
+    .image-placeholder {
+        height: 450px;
+    }
+
+    .products {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-item,
+    .gallery-item:nth-child(2),
+    .gallery-item:nth-child(5) {
+        height: 400px;
+    }
+
+    .about-section {
+        grid-template-columns: 1fr;
+    }
+
+    footer {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
