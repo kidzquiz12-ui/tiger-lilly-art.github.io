@@ -1289,49 +1289,55 @@ h2 {
     }
 }
 /* =====================================================
-   WATER LILY CURSOR
+   TIGER LILLY — WATER LILY CURSOR
    ===================================================== */
 
 .water-lily-cursor {
     position: fixed;
-    top: 0;
-    left: 0;
-
-    width: 22px;
-    height: 22px;
+    width: 30px;
+    height: 30px;
 
     pointer-events: none;
-    z-index: 9999;
+    z-index: 99999;
 
     display: flex;
     align-items: center;
     justify-content: center;
 
-    color: #c9e8e9;
-    font-size: 20px;
+    color: #d8f5f5;
+    font-size: 27px;
 
     transform: translate(-50%, -50%);
 
     text-shadow:
-        0 0 5px rgba(190, 230, 235, 0.7),
-        0 0 12px rgba(120, 190, 205, 0.35);
+        0 0 5px rgba(210, 245, 245, 0.9),
+        0 0 12px rgba(130, 205, 215, 0.65);
 
-    transition: transform 0.15s ease;
+    transition:
+        left 0.08s ease-out,
+        top 0.08s ease-out,
+        transform 0.2s ease;
+    
+    animation: lilyFloat 2.5s ease-in-out infinite;
 }
 
-/* Only use the custom cursor on computers */
-@media (hover: hover) and (pointer: fine) {
+@keyframes lilyFloat {
+    0%, 100% {
+        transform: translate(-50%, -50%) rotate(-4deg);
+    }
 
-    body,
-    a,
-    button {
+    50% {
+        transform: translate(-50%, -50%) rotate(4deg) translateY(-2px);
+    }
+}
+
+@media (hover: hover) and (pointer: fine) {
+    body {
         cursor: none;
     }
 }
 
-/* Don't show it on phones/tablets */
 @media (hover: none), (pointer: coarse) {
-
     .water-lily-cursor {
         display: none;
     }
