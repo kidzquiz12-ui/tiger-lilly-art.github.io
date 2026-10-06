@@ -448,3 +448,374 @@ h2 {
         padding: 110px 30px 60px;
     }
 }
+
+/* =====================================================
+   HOME
+   ===================================================== */
+
+.home {
+    min-height: 100vh;
+
+    position: relative;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    align-items: center;
+
+    gap: 60px;
+
+    padding: 80px 9vw;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 80% 40%,
+            rgba(25, 55, 47, 0.08),
+            transparent 35%
+        );
+}
+
+
+/* HOME TEXT */
+
+.home-text {
+    position: relative;
+
+    z-index: 2;
+}
+
+
+.eyebrow {
+    font-size: 11px;
+
+    letter-spacing: 5px;
+
+    margin-bottom: 35px;
+
+    opacity: 0.65;
+}
+
+
+.home h2 {
+    font-size: clamp(90px, 11vw, 170px);
+
+    line-height: 0.72;
+
+    font-weight: 500;
+
+    letter-spacing: -6px;
+}
+
+
+.home-description {
+    max-width: 370px;
+
+    margin-top: 45px;
+
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: 24px;
+
+    line-height: 1.25;
+}
+
+
+/* BUTTONS */
+
+.home-buttons {
+    display: flex;
+
+    align-items: center;
+
+    gap: 25px;
+
+    margin-top: 40px;
+}
+
+
+.button {
+    display: inline-block;
+
+    padding: 14px 23px;
+
+    background: #19372f;
+
+    color: #e8e1d1;
+
+    text-decoration: none;
+
+    font-size: 12px;
+
+    letter-spacing: 1px;
+
+    transition: 0.3s ease;
+}
+
+
+.button:hover {
+    background: #b99a5d;
+
+    color: #19372f;
+
+    transform: translateY(-3px);
+}
+
+
+.text-link {
+    color: #19372f;
+
+    text-decoration: none;
+
+    font-size: 12px;
+
+    letter-spacing: 1px;
+}
+
+
+.text-link:hover {
+    text-decoration: underline;
+}
+
+
+/* =====================================================
+   HERO ART
+   ===================================================== */
+
+.hero-art {
+    position: relative;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+}
+
+
+.art-frame {
+    position: relative;
+
+    width: min(480px, 90%);
+
+    aspect-ratio: 0.78;
+
+    background: #c7d0c4;
+
+    border: 1px solid #19372f;
+
+    transform: rotate(2deg);
+
+    box-shadow:
+        15px 15px 0 #19372f;
+
+    overflow: hidden;
+}
+
+
+/* decorative frame */
+
+.art-frame::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 18px;
+
+    border: 1px solid #b99a5d;
+
+    z-index: 3;
+
+    pointer-events: none;
+}
+
+
+/* TIGER PLACEHOLDER */
+
+.tiger-placeholder {
+    position: absolute;
+
+    inset: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    color: #19372f;
+
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: 65px;
+
+    letter-spacing: 8px;
+
+    opacity: 0.4;
+}
+
+
+/* CLOUDS */
+
+.cloud {
+    position: absolute;
+
+    color: #19372f;
+
+    font-family: serif;
+
+    opacity: 0.4;
+}
+
+.cloud-one {
+    top: 40px;
+    left: 45px;
+    font-size: 60px;
+}
+
+.cloud-two {
+    bottom: 60px;
+    right: 30px;
+    font-size: 45px;
+}
+
+
+/* FLOWERS */
+
+.flower {
+    position: absolute;
+
+    color: #b99a5d;
+
+    font-size: 50px;
+}
+
+.flower-one {
+    top: 100px;
+    right: 50px;
+}
+
+.flower-two {
+    bottom: 80px;
+    left: 45px;
+}
+
+
+/* CAPTION */
+
+.art-caption {
+    align-self: flex-end;
+
+    margin-top: 18px;
+
+    margin-right: 5%;
+
+    font-size: 9px;
+
+    letter-spacing: 3px;
+
+    opacity: 0.6;
+}
+
+
+/* SCROLL */
+
+.scroll-note {
+    position: absolute;
+
+    bottom: 30px;
+
+    left: 9vw;
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+
+    opacity: 0.55;
+}
+
+
+/* =====================================================
+   SECTION DETAILS
+   ===================================================== */
+
+.section-label {
+    font-size: 10px;
+
+    letter-spacing: 4px;
+
+    margin-bottom: 40px;
+
+    opacity: 0.6;
+}
+
+
+.section-description {
+    max-width: 500px;
+
+    margin-top: 45px;
+
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: 25px;
+
+    line-height: 1.3;
+}
+
+
+/* =====================================================
+   MOBILE HOME
+   ===================================================== */
+
+@media (max-width: 900px) {
+
+    .home {
+        grid-template-columns: 1fr;
+
+        padding-top: 130px;
+
+        gap: 70px;
+    }
+
+    .hero-art {
+        order: -1;
+    }
+
+    .home h2 {
+        font-size: 90px;
+    }
+
+    .scroll-note {
+        display: none;
+    }
+}
+
+
+@media (max-width: 500px) {
+
+    .home {
+        padding: 110px 25px 60px;
+    }
+
+    .home h2 {
+        font-size: 70px;
+
+        letter-spacing: -4px;
+    }
+
+    .home-description {
+        font-size: 21px;
+    }
+
+    .home-buttons {
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+    .art-frame {
+        width: 90%;
+    }
+}
