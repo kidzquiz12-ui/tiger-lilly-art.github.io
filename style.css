@@ -1285,6 +1285,12 @@ h2 {
 
         align-items: flex-start;
     }
+   .gallery-art img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
 
     .antique-frame {
         width: 90%;
