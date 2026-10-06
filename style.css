@@ -1,13 +1,5 @@
-:root {
-    --cream: #f5f0e8;
-    --ink: #202020;
-    --red: #7d1717;
-    --soft-red: #a33a32;
-    --gold: #b89555;
-    --sage: #66705c;
-/* =========================
-   GENERAL
-========================= */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500&display=swap');
+
 
 * {
     margin: 0;
@@ -20,546 +12,293 @@ html {
 }
 
 body {
-    background: var(--cream);
-    color: var(--ink);
-    font-family: Georgia, 'Times New Roman', serif;
+    background: #e9e3d5;
+    color: #17251f;
+    font-family: 'DM Sans', sans-serif;
+}
+
+
+/* =========================
+   TEMPLE SIDEBAR
+   ========================= */
+
+.temple-nav {
+    position: fixed;
+    left: 0;
+    top: 0;
+
+    width: 230px;
+    height: 100vh;
+
+    padding: 28px 24px;
+
+    background: #18362f;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    z-index: 1000;
+
+    border-right: 3px solid #c5a76a;
+}
+
+
+/* TEMPLE ROOF */
+
+.temple-roof {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    margin-bottom: 25px;
+}
+
+.temple-roof span {
+    height: 2px;
+    flex: 1;
+    background: #c5a76a;
+}
+
+.temple-roof h1 {
+    text-align: center;
+
+    color: #e9d39a;
+
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 24px;
+    line-height: 0.8;
+
+    letter-spacing: 3px;
+}
+
+
+/* DECORATIONS */
+
+.nav-decoration {
+    color: #c5a76a;
+
+    font-size: 22px;
+
+    margin: 18px 0;
+}
+
+
+/* NAVIGATION */
+
+nav {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 8px;
+}
+
+nav a {
+    position: relative;
+
+    display: block;
+
+    padding: 16px 12px;
+
+    text-align: center;
+
+    color: #e9e3d5;
+
+    text-decoration: none;
+
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: 20px;
+    letter-spacing: 2px;
+
+    transition: 0.3s ease;
+}
+
+
+/* little gold line */
+
+nav a::before,
+nav a::after {
+    content: "";
+
+    position: absolute;
+
+    top: 50%;
+
+    width: 0;
+    height: 1px;
+
+    background: #c5a76a;
+
+    transition: 0.3s ease;
+}
+
+nav a::before {
+    left: 0;
+}
+
+nav a::after {
+    right: 0;
+}
+
+
+nav a:hover {
+    color: #e9d39a;
+
+    letter-spacing: 4px;
+}
+
+nav a:hover::before,
+nav a:hover::after {
+    width: 18px;
+}
+
+
+/* BOTTOM TEMPLE DETAIL */
+
+.temple-bottom {
+    width: 100%;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    margin-top: 20px;
+}
+
+.temple-bottom span {
+    display: block;
+
+    width: 28px;
+    height: 4px;
+
+    background: #c5a76a;
+}
+
+
+/* =========================
+   MAIN CONTENT
+   ========================= */
+
+main {
+    margin-left: 230px;
+}
+
+
+.page-section {
+    min-height: 100vh;
+
+    padding: 100px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+.page-section:nth-child(even) {
+    background: #ded6c4;
+}
+
+
+.small-heading {
+    font-size: 13px;
+    letter-spacing: 5px;
+    margin-bottom: 20px;
+}
+
+
+h2 {
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: clamp(70px, 10vw, 150px);
+
+    font-weight: 500;
+
+    line-height: 0.8;
+
+    letter-spacing: -3px;
+}
+
+
+.intro {
+    max-width: 400px;
+
+    margin-top: 35px;
+
+    font-size: 18px;
+
     line-height: 1.6;
 }
 
-a {
-    color: inherit;
-    text-decoration: none;
-}
-
 
 /* =========================
-   NAVIGATION
-========================= */
+   MOBILE
+   ========================= */
 
-header {
-    padding: 25px 6%;
-    border-bottom: 1px solid #202020;
-    position: sticky;
-    top: 0;
-    background: var(--cream);
-    z-index: 100;
-}
+@media (max-width: 700px) {
 
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
+    .temple-nav {
+        width: 100%;
+        height: auto;
 
-.logo {
-    font-size: 1.25rem;
-    font-weight: bold;
-    letter-spacing: 3px;
-    transition: 0.3s ease;
-}
-    
-.logo:hover {
-    color: var(--red);
-}
-.nav-links {
-    display: flex;
-    gap: 35px;
-    font-family: Arial, sans-serif;
-    font-size: 0.78rem;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-}
+        position: fixed;
 
-.nav-links a {
-    position: relative;
-    padding-bottom: 5px;
-}
+        padding: 12px 18px;
 
-.nav-links a::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 0;
-    height: 1px;
-    background: var(--red);
-    transition: width 0.3s ease;
-}
+        flex-direction: row;
 
-.nav-links a:hover::after {
-    width: 100%;
-}
+        justify-content: space-between;
 
-.nav-links a:hover {
-    text-decoration: underline;
-}
+        border-right: none;
+        border-bottom: 2px solid #c5a76a;
+    }
 
+    .temple-roof {
+        width: auto;
+        margin: 0;
+    }
 
-/* =========================
-   HERO
-========================= */
-
-.hero {
-    min-height: 88vh;
-    padding: 90px 6%;
-    display: grid;
-    grid-template-columns: 1.05fr 0.95fr;
-    gap: 80px;
-    align-items: center;
-    position: relative;
-    overflow: hidden;
-}
-
-.small-heading {
-    font-family: Arial, sans-serif;
-    font-size: 0.75rem;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    margin-bottom: 20px;
-    color: var(--red);
-}
-
-.hero h1 {
-    font-size: clamp(3.5rem, 7vw, 7rem);
-    line-height: 0.88;
-    font-weight: normal;
-    letter-spacing: -3px;
-    margin-bottom: 35px;
-}
-
-.hero-text > p:not(.small-heading) {
-    max-width: 450px;
-    font-size: 1.1rem;
-    margin-bottom: 35px;
-}
-
-.button {
-    display: inline-block;
-    background: var(--ink);
-    color: var(--cream);
-    padding: 14px 25px;
-    font-family: Arial, sans-serif;
-    font-size: 0.8rem;
-    letter-spacing: 1px;
-    transition: 0.3s;
-}
-
-.button:hover {
-    background: var(--red);
-    transform: translateY(-3px);
-}
-
-
-/* =========================
-   IMAGE PLACEHOLDER
-========================= */
-
-.image-placeholder {
-    height: 600px;
-    position: relative;
-    overflow: hidden;
-
-    background:
-        radial-gradient(
-            ellipse at 50% 80%,
-            rgba(255, 255, 255, 0.35),
-            transparent 45%
-        ),
-        linear-gradient(
-            180deg,
-            #d9e5df 0%,
-            #a8c8c1 45%,
-            #719c98 100%
-        );
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    font-family: Georgia, 'Times New Roman', serif;
-    letter-spacing: 3px;
-
-    box-shadow:
-        inset 0 0 80px rgba(255, 255, 255, 0.25);
-}
-    .image-placeholder::before {
-    content: '';
-    position: absolute;
-    width: 140%;
-    height: 45%;
-    left: -20%;
-    bottom: -5%;
-
-    background:
-        repeating-radial-gradient(
-            ellipse at center,
-            transparent 0px,
-            transparent 14px,
-            rgba(255, 255, 255, 0.22) 16px,
-            transparent 19px
-        );
-
-    opacity: 0.65;
-    transform: perspective(400px) rotateX(55deg);
-}
-    .image-placeholder::after {
-    content: '☁';
-    position: absolute;
-
-    top: 35px;
-    right: 35px;
-
-    font-size: 5rem;
-    color: rgba(255, 255, 255, 0.55);
-
-    filter: blur(1px);
-    transform: rotate(-8deg);
-}
-
-
-/* =========================
-   SECTIONS
-========================= */
-
-.section {
-    padding: 120px 6%;
-    position: relative;
-}
-
-.section:not(.gallery-section)::after {
-    content: '──────── ✦ ────────';
-    display: block;
-    text-align: center;
-    margin-top: 90px;
-    color: var(--gold);
-    font-family: Georgia, 'Times New Roman', serif;
-    letter-spacing: 4px;
-    opacity: 0.7;
-}
-
-.section h2,
-.custom-section h2 {
-    font-size: clamp(2.5rem, 5vw, 5rem);
-    font-weight: normal;
-    line-height: 1;
-    margin-bottom: 60px;
-}
-
-
-/* =========================
-   SHOP
-========================= */
-
-.products {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
-}
-
-.product-image {
-    height: 420px;
-    background: #d8cbb9;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: Arial, sans-serif;
-    font-size: 0.75rem;
-    letter-spacing: 4px;
-    margin-bottom: 25px;
-    transition: transform 0.4s ease;
-}
-
-.product:hover .product-image {
-    transform: translateY(-8px);
-}
-
-.product h3 {
-    font-size: 1.8rem;
-    letter-spacing: 0.5px;
-    font-weight: normal;
-    margin-bottom: 5px;
-}
-
-.product p {
-    margin-bottom: 15px;
-    color: #555;
-}
-
-.product a {
-    font-family: Arial, sans-serif;
-    font-size: 0.75rem;
-    letter-spacing: 1px;
-}
-
-.product a:hover {
-    color: #7d1717;
-}
-
-
-/* =========================
-   GALLERY
-========================= */
-
-.gallery-section {
-    background: #202020;
-    color: #f5f0e8;
-}
-
-.gallery {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 15px;
-}
-
-.gallery-item {
-    height: 400px;
-    background: #75695e;
-    display: flex;
-    align-items: flex-end;
-    justify-content: flex-start;
-    padding: 25px;
-    font-family: Arial, sans-serif;
-    font-size: 0.7rem;
-    letter-spacing: 2px;
-    transition: transform 0.4s ease, background 0.4s ease;
-}
-
-.gallery-item:hover {
-    transform: scale(1.02);
-    background: var(--red);
-}
-
-.gallery-item:nth-child(2),
-.gallery-item:nth-child(5) {
-    height: 500px;
-}
-
-
-/* =========================
-   ABOUT
-========================= */
-
-.about-section {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 100px;
-    align-items: center;
-    position: relative;
-}
-
-.about-section::before {
-    content: '✦';
-    position: absolute;
-    top: 40px;
-    right: 8%;
-    font-size: 2rem;
-    color: var(--gold);
-}
-
-.about-section::after {
-    content: '✦';
-    position: absolute;
-    bottom: 40px;
-    left: 5%;
-    font-size: 1rem;
-    color: var(--red);
-}
-
-.about-section > p {
-    font-size: 1.35rem;
-    max-width: 600px;
-    line-height: 1.8;
-}
-
-
-/* =========================
-   CUSTOM ART
-========================= */
-
-.custom-section {
-    background: var(--red);
-    color: var(--cream);
-    padding: 160px 6%;
-    position: relative;
-    overflow: hidden;
-}
-    .custom-section::before {
-    content: '✦';
-    position: absolute;
-    top: 50px;
-    right: 8%;
-    font-size: 4rem;
-    color: var(--gold);
-    opacity: 0.7;
-}
-
-.custom-section::after {
-    content: '✦';
-    position: absolute;
-    bottom: 40px;
-    left: 8%;
-    font-size: 2rem;
-    color: var(--cream);
-    opacity: 0.5;
-}
-
-.custom-section p:not(.small-heading) {
-    max-width: 600px;
-    font-size: 1.2rem;
-    margin-bottom: 35px;
-}
-
-.custom-section .button {
-    background: #f5f0e8;
-    color: #202020;
-}
-
-.custom-section .button:hover {
-    background: #202020;
-    color: #f5f0e8;
-}
-
-
-/* =========================
-   CONTACT
-========================= */
-
-.contact-section {
-    text-align: center;
-}
-
-.contact-section p:not(.small-heading) {
-    margin-bottom: 30px;
-}
-
-
-/* =========================
-   FOOTER
-========================= */
-
-footer {
-    border-top: 1px solid #202020;
-    padding: 30px 6%;
-    display: flex;
-    justify-content: space-between;
-    font-family: Arial, sans-serif;
-    font-size: 0.75rem;
-}
-
-
-/* =========================
-   CONTACT DETAILS
-========================= */
-
-.contact-section {
-    position: relative;
-    overflow: hidden;
-    padding-top: 150px;
-    padding-bottom: 150px;
-}
-
-.contact-section::before {
-    content: '✦';
-    position: absolute;
-    top: 70px;
-    left: 10%;
-    font-size: 3rem;
-    color: var(--gold);
-}
-
-.contact-section::after {
-    content: '✦';
-    position: absolute;
-    bottom: 60px;
-    right: 12%;
-    font-size: 1.5rem;
-    color: var(--red);
-}
-
-.contact-section h2 {
-    margin-bottom: 35px;
-}
-
-.contact-section p:not(.small-heading) {
-    max-width: 550px;
-    margin: 0 auto 35px;
-    font-size: 1.2rem;
-    line-height: 1.8;
-}
-@media (max-width: 800px) {
-    /* =========================
-   BOTANICAL DECORATION
-========================= */
-
-.hero::before {
-    content: '❧';
-    position: absolute;
-    top: 45px;
-    left: 3%;
-    font-size: 4rem;
-    color: var(--gold);
-    transform: rotate(-20deg);
-    opacity: 0.8;
-}
-
-.hero::after {
-    content: '✦';
-    position: absolute;
-    bottom: 40px;
-    left: 48%;
-    font-size: 1.5rem;
-    color: var(--red);
-}
-
-.gallery-section {
-    position: relative;
-    overflow: hidden;
-}
-
-.gallery-section::before {
-    content: '❧';
-    position: absolute;
-    top: 50px;
-    right: 4%;
-    font-size: 5rem;
-    color: var(--gold);
-    transform: rotate(160deg);
-    opacity: 0.7;
-}
-
-    .nav-links {
+    .temple-roof span,
+    .nav-decoration,
+    .temple-bottom {
         display: none;
     }
 
-    .hero {
-        grid-template-columns: 1fr;
-        padding-top: 50px;
+    .temple-roof h1 {
+        font-size: 18px;
     }
 
-    .image-placeholder {
-        height: 450px;
+    nav {
+        width: auto;
+
+        flex-direction: row;
+
+        gap: 4px;
     }
 
-    .products {
-        grid-template-columns: 1fr;
+    nav a {
+        padding: 8px 5px;
+
+        font-size: 12px;
+
+        letter-spacing: 1px;
     }
 
-    .gallery {
-        grid-template-columns: 1fr;
+    nav a:hover {
+        letter-spacing: 1px;
     }
 
-    .gallery-item,
-    .gallery-item:nth-child(2),
-    .gallery-item:nth-child(5) {
-        height: 400px;
+    main {
+        margin-left: 0;
     }
 
-    .about-section {
-        grid-template-columns: 1fr;
-    }
-
-    footer {
-        flex-direction: column;
-        gap: 10px;
+    .page-section {
+        padding: 100px 30px 60px;
     }
 }
