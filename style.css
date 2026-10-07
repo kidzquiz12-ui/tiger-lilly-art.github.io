@@ -2795,3 +2795,464 @@ h2 {
         padding: 0 20px;
     }
 }
+/* =========================================
+   TIGER LILLY — PARCEL COMMISSIONS
+   ========================================= */
+
+.commission-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 45px;
+
+    width: 100%;
+    max-width: 1100px;
+
+    margin: 75px auto 0;
+}
+
+
+/* THE PARCEL */
+
+.parcel {
+    position: relative;
+
+    min-height: 500px;
+
+    text-align: center;
+
+    cursor: pointer;
+
+    perspective: 1000px;
+}
+
+
+/* BOX */
+
+.parcel-box {
+    position: relative;
+
+    height: 330px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #557985,
+            #3d626f 50%,
+            #294b5a
+        );
+
+    border: 1px solid rgba(190, 225, 230, 0.3);
+
+    box-shadow:
+        8px 10px 0 rgba(4, 21, 35, 0.45),
+        0 25px 45px rgba(0, 0, 0, 0.25);
+
+    overflow: hidden;
+
+    transition:
+        transform 0.5s cubic-bezier(.2,.8,.2,1),
+        box-shadow 0.5s ease;
+}
+
+
+/* BOX HOVER */
+
+.parcel:hover .parcel-box {
+    transform:
+        translateY(-12px)
+        rotate(-1deg)
+        scale(1.025);
+
+    box-shadow:
+        12px 18px 0 rgba(4, 21, 35, 0.35),
+        0 35px 60px rgba(0, 0, 0, 0.3);
+}
+
+
+/* PACKING TAPE */
+
+.parcel-tape {
+    position: absolute;
+
+    top: -10%;
+    left: 42%;
+
+    width: 70px;
+    height: 120%;
+
+    background:
+        repeating-linear-gradient(
+            0deg,
+            rgba(210, 213, 196, 0.7) 0px,
+            rgba(210, 213, 196, 0.7) 7px,
+            rgba(190, 195, 180, 0.7) 8px,
+            rgba(210, 213, 196, 0.7) 13px
+        );
+
+    transform: rotate(1deg);
+
+    box-shadow:
+        inset 2px 0 rgba(255,255,255,.12),
+        inset -2px 0 rgba(0,0,0,.08);
+
+    transition:
+        transform 0.7s ease,
+        opacity 0.5s ease;
+}
+
+
+/* LABEL */
+
+.parcel-label {
+    position: absolute;
+
+    left: 25px;
+    bottom: 28px;
+
+    padding: 13px 18px;
+
+    background: #e9e3d4;
+
+    color: #263e48;
+
+    transform: rotate(-2deg);
+
+    box-shadow:
+        3px 4px 0 rgba(0,0,0,.15);
+
+    z-index: 3;
+}
+
+.parcel-label span {
+    display: block;
+
+    font-size: 8px;
+    letter-spacing: 3px;
+
+    margin-bottom: 6px;
+}
+
+.parcel-label strong {
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: 22px;
+
+    font-weight: 500;
+}
+
+
+/* STAMP */
+
+.parcel-stamp {
+    position: absolute;
+
+    right: 25px;
+    top: 25px;
+
+    width: 55px;
+    height: 55px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px dashed rgba(220, 238, 240, 0.5);
+
+    color: #d4e7e9;
+
+    font-size: 22px;
+
+    transform: rotate(8deg);
+
+    opacity: .75;
+}
+
+
+/* HANDWRITING */
+
+.parcel-writing {
+    position: absolute;
+
+    right: 28px;
+    bottom: 32px;
+
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: 12px;
+    line-height: 1.1;
+
+    letter-spacing: 2px;
+
+    text-align: left;
+
+    color: rgba(225, 239, 240, .6);
+
+    transform: rotate(4deg);
+}
+
+
+/* NAME */
+
+.parcel-name {
+    margin-top: 25px;
+
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: 27px;
+
+    color: #dcecf1;
+}
+
+
+/* HINT */
+
+.parcel-hint {
+    display: block;
+
+    margin-top: 6px;
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+
+    color: #8fb9c3;
+
+    opacity: .7;
+}
+
+
+/* =========================================
+   OPENING ANIMATION
+   ========================================= */
+
+.parcel.open .parcel-tape {
+    transform:
+        translateY(-120%)
+        rotate(8deg);
+
+    opacity: 0;
+}
+
+
+/* BOX LIFTS */
+
+.parcel.open .parcel-box {
+    transform:
+        translateY(-20px)
+        scale(.92);
+
+    opacity: .35;
+}
+
+
+/* =========================================
+   WHITE CARD
+   ========================================= */
+
+.parcel-letter {
+    position: absolute;
+
+    top: 30px;
+    left: 50%;
+
+    width: 88%;
+
+    padding: 35px 30px;
+
+    background: #f5f1e8;
+
+    color: #263e48;
+
+    box-shadow:
+        5px 8px 0 rgba(4, 21, 35, .2),
+        0 25px 55px rgba(0,0,0,.3);
+
+    transform:
+        translate(-50%, 80px)
+        rotate(2deg)
+        scale(.7);
+
+    opacity: 0;
+
+    pointer-events: none;
+
+    z-index: 20;
+
+    transition:
+        transform .65s cubic-bezier(.2,.8,.2,1),
+        opacity .4s ease;
+}
+
+
+/* CARD APPEARS */
+
+.parcel.open .parcel-letter {
+    transform:
+        translate(-50%, 0)
+        rotate(-1deg)
+        scale(1);
+
+    opacity: 1;
+
+    pointer-events: auto;
+}
+
+
+/* CLOSE */
+
+.parcel-close {
+    position: absolute;
+
+    top: 10px;
+    right: 14px;
+
+    border: none;
+    background: none;
+
+    font-size: 22px;
+
+    color: #557985;
+
+    cursor: pointer;
+}
+
+
+/* CARD CONTENT */
+
+.letter-label {
+    font-size: 8px;
+
+    letter-spacing: 3px;
+
+    color: #6d8990;
+}
+
+.parcel-letter h3 {
+    margin: 18px 0;
+
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: 38px;
+    line-height: .85;
+
+    font-weight: 500;
+
+    color: #263e48;
+}
+
+.letter-price {
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: 24px;
+
+    color: #557985;
+}
+
+.letter-line {
+    height: 1px;
+
+    margin: 22px 0;
+
+    background: rgba(38,62,72,.15);
+}
+
+
+/* FEATURES */
+
+.parcel-letter ul {
+    list-style: none;
+
+    padding: 0;
+    margin: 0;
+
+    text-align: left;
+}
+
+.parcel-letter li {
+    margin-bottom: 9px;
+
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: 15px;
+
+    color: #536b72;
+}
+
+.parcel-letter li::before {
+    content: "✦ ";
+
+    color: #789da5;
+}
+
+
+/* TIME */
+
+.letter-time {
+    display: flex;
+    justify-content: space-between;
+
+    margin-top: 25px;
+    padding-top: 15px;
+
+    border-top: 1px solid rgba(38,62,72,.12);
+}
+
+.letter-time span {
+    font-size: 7px;
+    letter-spacing: 2px;
+
+    color: #79939a;
+}
+
+.letter-time strong {
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: 15px;
+
+    font-weight: 500;
+
+    color: #385761;
+}
+
+
+/* BUTTON */
+
+.parcel-letter > a {
+    display: block;
+
+    margin-top: 22px;
+
+    padding: 12px;
+
+    text-decoration: none;
+    text-align: center;
+
+    background: #365b68;
+
+    color: #edf4f4;
+
+    font-size: 9px;
+
+    letter-spacing: 1.5px;
+
+    transition: transform .3s ease;
+}
+
+.parcel-letter > a:hover {
+    transform: translateY(-2px);
+}
+
+
+/* MOBILE */
+
+@media (max-width: 850px) {
+
+    .commission-grid {
+        grid-template-columns: 1fr;
+        max-width: 450px;
+    }
+
+    .parcel {
+        min-height: 480px;
+    }
+}
