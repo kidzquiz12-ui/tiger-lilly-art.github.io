@@ -1881,3 +1881,21 @@ h2 {
     }
 
 }
+/* ABOUT DIVIDER */
+
+.about-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+    margin: 80px auto 20px;
+    color: #9fcbd3;
+    opacity: 0.55;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px;
+}
+
+.about-divider span:nth-child(2) {
+    font-size: 28px;
+    opacity: 0.6;
+}
