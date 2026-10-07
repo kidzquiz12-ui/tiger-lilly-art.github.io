@@ -64,3 +64,23 @@ function toggleShopItem(item) {
 
     item.classList.toggle('open');
 }
+// =====================================================
+// CONTACT LETTER
+// =====================================================
+
+function openLetter() {
+
+    const letter = document.querySelector('#contactLetter');
+
+    letter.classList.add('open');
+
+}
+
+
+function closeLetter() {
+
+    const letter = document.querySelector('#contactLetter');
+
+    letter.classList.remove('open');
+
+}
