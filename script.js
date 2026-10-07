@@ -48,3 +48,19 @@ qaButtons.forEach(function(button) {
     });
 
 });
+// =====================================================
+// SHOP ITEMS
+// =====================================================
+
+function toggleShopItem(item) {
+
+    document.querySelectorAll('.shop-item.open').forEach(function(otherItem) {
+
+        if (otherItem !== item) {
+            otherItem.classList.remove('open');
+        }
+
+    });
+
+    item.classList.toggle('open');
+}
