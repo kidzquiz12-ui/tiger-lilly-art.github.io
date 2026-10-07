@@ -1374,3 +1374,45 @@ h2 {
         opacity: 0;
     }
 }
+.about-card {
+  width: 80%;
+  max-width: 750px;
+  margin: 50px auto;
+  padding: 45px 55px;
+  background: #d8b98c;
+  border: 3px dashed #5b3a29;
+  border-radius: 6px;
+  box-shadow: 8px 10px 0px rgba(70, 45, 30, 0.15);
+  position: relative;
+  font-family: Georgia, serif;
+  color: #4b3023;
+}
+
+.about-card::before,
+.about-card::after {
+  content: "🌿";
+  position: absolute;
+  font-size: 42px;
+}
+
+.about-card::before {
+  top: -22px;
+  left: -18px;
+  transform: rotate(-25deg);
+}
+
+.about-card::after {
+  bottom: -20px;
+  right: -15px;
+  transform: rotate(25deg);
+}
+
+.about-card-content {
+  text-align: center;
+  font-size: 18px;
+  line-height: 1.8;
+}
+
+.about-card-content p {
+  margin: 8px 0;
+}
