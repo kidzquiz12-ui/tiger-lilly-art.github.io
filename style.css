@@ -405,8 +405,8 @@ main {
     justify-content: center;
 }
 
-.page-section:nth-child(even) {
-    background: rgba(5, 25, 42, 0.22);
+.page-section {
+    background: transparent;
 }
 
 .small-heading {
