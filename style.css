@@ -3473,3 +3473,89 @@ h2 {
     }
 
 }
+/* =========================================
+   SHOP ITEM — OPENING CARDS
+   ========================================= */
+
+.shop-item {
+    min-height: 230px;
+}
+
+.shop-front,
+.shop-back {
+    transition:
+        opacity .4s ease,
+        transform .5s cubic-bezier(.2,.8,.2,1);
+}
+
+.shop-back {
+    position: absolute;
+    inset: 0;
+
+    padding: 30px;
+
+    background: #f5f1e8;
+    color: #294653;
+
+    opacity: 0;
+    transform: translateY(25px);
+
+    pointer-events: none;
+}
+
+.shop-item.open .shop-front {
+    opacity: 0;
+    transform: translateY(-20px);
+}
+
+.shop-item.open .shop-back {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+.shop-back-label {
+    display: block;
+
+    font-size: 8px;
+    letter-spacing: 2px;
+
+    color: #78939a;
+}
+
+.shop-back h3 {
+    margin: 18px 0 12px;
+
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 30px;
+    font-weight: 500;
+}
+
+.shop-back p {
+    color: #587078;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 15px;
+    line-height: 1.4;
+}
+
+.shop-back strong {
+    display: block;
+
+    margin-top: 20px;
+
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 21px;
+
+    color: #365b68;
+}
+
+.shop-back > span:last-child {
+    display: block;
+
+    margin-top: 18px;
+
+    font-size: 7px;
+    letter-spacing: 1.5px;
+
+    color: #8aa5ab;
+}
