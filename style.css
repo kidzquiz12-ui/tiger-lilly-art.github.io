@@ -2033,3 +2033,7 @@ h2 {
     }
 }
 ```
+.art-placeholder {
+    background: #183f5b !important;
+    color: #d9edf0 !important;
+}
