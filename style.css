@@ -1480,3 +1480,311 @@ h2 {
   font-size: 15px;
   margin-bottom: 8px;
 }
+
+/* =====================================================
+   ARTIST Q&A
+   ===================================================== */
+
+.artist-qa {
+    position: relative;
+    max-width: 1050px;
+    margin: 100px auto 0;
+    padding: 90px 0 40px;
+}
+
+.qa-heading {
+    text-align: center;
+    margin-bottom: 65px;
+}
+
+.qa-heading .section-label {
+    margin-bottom: 25px;
+}
+
+.qa-heading h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(55px, 7vw, 90px);
+    font-weight: 500;
+    line-height: 0.82;
+    letter-spacing: -3px;
+    color: #e1eff1;
+    margin: 0;
+}
+
+.qa-heading > p:last-child {
+    margin-top: 25px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 21px;
+    font-style: italic;
+    color: #a9cbd2;
+}
+
+
+/* Q&A WORLD */
+
+.qa-world {
+    display: grid;
+    grid-template-columns: 0.8fr 1.4fr;
+    align-items: center;
+    gap: 70px;
+}
+
+
+/* TINY ARTIST */
+
+.tiny-artist {
+    position: relative;
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.tiny-artist-glow {
+    position: absolute;
+    width: 230px;
+    height: 230px;
+    border-radius: 50%;
+    background: radial-gradient(
+        circle,
+        rgba(150, 210, 220, 0.15),
+        transparent 70%
+    );
+    filter: blur(5px);
+}
+
+.tiny-artist-placeholder {
+    position: relative;
+    width: 170px;
+    height: 220px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid rgba(190, 225, 230, 0.25);
+
+    background:
+        radial-gradient(
+            circle at 50% 40%,
+            rgba(170, 215, 220, 0.15),
+            transparent 60%
+        ),
+        rgba(10, 39, 57, 0.35);
+
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.25),
+        inset 0 0 35px rgba(150, 210, 220, 0.05);
+
+    font-size: 55px;
+    color: #d5eef0;
+
+    transform: rotate(-3deg);
+    transition: transform 0.4s ease;
+}
+
+.tiny-artist-placeholder:hover {
+    transform: rotate(2deg) translateY(-8px);
+}
+
+.tiny-artist > p {
+    margin-top: 20px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px;
+    font-style: italic;
+    color: #9fc5cd;
+}
+
+
+/* Q&A CARD */
+
+.qa-card {
+    position: relative;
+    padding: 35px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(39, 76, 91, 0.65),
+            rgba(8, 35, 52, 0.75)
+        );
+
+    border: 1px solid rgba(190, 225, 230, 0.25);
+
+    box-shadow:
+        10px 12px 0 rgba(4, 20, 33, 0.5),
+        0 25px 60px rgba(0, 0, 0, 0.2);
+
+    backdrop-filter: blur(8px);
+}
+
+
+/* CARD CORNERS */
+
+.qa-card::before,
+.qa-card::after {
+    content: "✦";
+    position: absolute;
+    color: #a8ced5;
+    opacity: 0.55;
+    font-size: 16px;
+}
+
+.qa-card::before {
+    top: 14px;
+    left: 16px;
+}
+
+.qa-card::after {
+    bottom: 14px;
+    right: 16px;
+}
+
+
+/* CARD TOP */
+
+.qa-card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(190, 225, 230, 0.15);
+
+    color: #9fc5cd;
+    font-size: 10px;
+    letter-spacing: 4px;
+}
+
+
+/* ANSWER */
+
+.qa-answer {
+    padding: 40px 20px 35px;
+}
+
+.qa-question-label {
+    margin-bottom: 12px;
+
+    font-size: 9px;
+    letter-spacing: 4px;
+    color: #8fb9c3;
+    opacity: 0.7;
+}
+
+.qa-answer h4 {
+    margin: 0;
+
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(32px, 4vw, 50px);
+    font-weight: 500;
+    line-height: 0.95;
+    color: #e3f1f2;
+}
+
+.qa-line {
+    width: 55px;
+    height: 1px;
+    margin: 25px 0;
+
+    background: #a9ccd3;
+    opacity: 0.5;
+}
+
+.qa-answer > p:last-child {
+    max-width: 500px;
+
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 21px;
+    line-height: 1.35;
+
+    color: #c2dce1;
+}
+
+
+/* QUESTION BUTTONS */
+
+.qa-questions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+
+    padding: 0 20px 30px;
+}
+
+.qa-question-button {
+    padding: 10px 15px;
+
+    background: rgba(160, 205, 215, 0.04);
+
+    border: 1px solid rgba(180, 220, 225, 0.18);
+
+    color: #a9cbd2;
+
+    font-family: inherit;
+    font-size: 10px;
+    letter-spacing: 1px;
+
+    cursor: pointer;
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.qa-question-button:hover {
+    background: rgba(160, 205, 215, 0.12);
+    color: #e1f1f2;
+    transform: translateY(-2px);
+}
+
+.qa-question-button.active {
+    background: rgba(170, 215, 220, 0.16);
+    color: #e8f5f6;
+    border-color: rgba(190, 225, 230, 0.35);
+}
+
+
+/* FOOTER */
+
+.qa-footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+
+    padding-top: 25px;
+
+    border-top: 1px solid rgba(190, 225, 230, 0.12);
+
+    color: #86adb6;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 14px;
+    font-style: italic;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 800px) {
+
+    .qa-world {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .tiny-artist {
+        min-height: 300px;
+    }
+
+    .artist-qa {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .qa-card {
+        padding: 25px 15px;
+    }
+
+}
