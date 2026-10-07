@@ -2357,3 +2357,57 @@ h2 {
             110px 30px 60px;
     }
 }
+/* =========================================
+   ABOUT + ASK ME ANYTHING LAYOUT
+   ========================================= */
+
+.about-intro-layout {
+    display: grid;
+    grid-template-columns: 1fr 0.7fr;
+    gap: 70px;
+    align-items: start;
+}
+
+.artist-qa {
+    margin-top: -250px;
+    margin-left: 55%;
+    width: 45%;
+}
+
+.qa-heading h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(45px, 5vw, 70px);
+    line-height: 0.85;
+    font-weight: 500;
+    color: #dcecf1;
+    margin: 15px 0;
+}
+
+.qa-heading p:last-child {
+    max-width: 320px;
+    color: #a9cbd2;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 17px;
+    line-height: 1.4;
+}
+
+.qa-world {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* MOBILE */
+
+@media (max-width: 900px) {
+
+    .about-intro-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .artist-qa {
+        margin-top: 70px;
+        margin-left: 0;
+        width: 100%;
+    }
+}
