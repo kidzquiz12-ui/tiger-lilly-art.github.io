@@ -84,3 +84,40 @@ function closeLetter() {
     letter.classList.remove('open');
 
 }
+// =====================================================
+// COMMISSION PARCELS
+// =====================================================
+
+const parcels = document.querySelectorAll('.parcel');
+
+parcels.forEach(function(parcel) {
+
+    const openButton = parcel.querySelector('.parcel-open');
+    const closeButton = parcel.querySelector('.parcel-close');
+
+    openButton.addEventListener('click', function(event) {
+
+        event.stopPropagation();
+
+        parcels.forEach(function(otherParcel) {
+
+            if (otherParcel !== parcel) {
+                otherParcel.classList.remove('open');
+            }
+
+        });
+
+        parcel.classList.add('open');
+
+    });
+
+
+    closeButton.addEventListener('click', function(event) {
+
+        event.stopPropagation();
+
+        parcel.classList.remove('open');
+
+    });
+
+});
